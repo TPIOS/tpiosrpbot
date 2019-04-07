@@ -15,7 +15,6 @@ async def get_readme():
     --------
     接下来本Bot还会更新的内容：
     1. FGOwiki API连接
-    2. 大型复读机
-    3. 更新.jrrp的一些设计
+    2. 更新.jrrp的一些设计
     '''
     return res
