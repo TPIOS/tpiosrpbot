@@ -25,6 +25,9 @@ async def calculate(data, dataString):
         else:
             if ch_flag: break
             event += ch
+    
+    if len(prop) == 0 or prop == '0': return nickname + "指令输入错误，请检查"
+
     prop = eval(prop)
     date = datetime.datetime.now()
     year = date.year
