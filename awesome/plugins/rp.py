@@ -3,7 +3,6 @@ import datetime
 
 @on_command('jrrp', only_to_me = False)
 async def jrrp(session: CommandSession):
-    print(session.ctx)
     rp_report = await get_today_rp(session)
     await session.send(rp_report)
 
@@ -29,4 +28,3 @@ def getrp(data):
     else:
         res = ((data['sender']['user_id'] * year // month + day) % 99) + 1
     return res
-    
