@@ -37,7 +37,7 @@ async def calculate(data, dataString):
     hour = date.hour
     second = date.second
     
-    res = (((len(event) * second // month + second) * year // hour) % 99) + 1
+    res = (((len(event) * second // month + second) * year // day) % 99) + 1
 
     chineseRes = " "
 
