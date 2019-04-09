@@ -42,9 +42,10 @@ async def calculate(data, dataString):
     event, prop = eventprop(dataString)
     if checkavail(event, prop): return nickname + "指令输入错误，请检查"
     prop = eval(prop)
+    strokes = get_stroke(event)
     date = datetime.datetime.now()
     year, month, day = date.year, date.month, date.day
     hour, minute, second = date.hour, date.minute, date.second
-    res = (((len(event) * second // month + second) * year // day) % 99) + 1
+    res = ((((strokes % len(event)) * second + month) * year // month) % 99) + 1
     chineseRes = " " + getRes(res, prop)
     return nickname + "进行" + event + "检定：D100=" + str(res) + "/" + str(prop) + chineseRes

@@ -20,11 +20,8 @@ async def get_today_rp(data):
     for c in qqid: id_cnt += int(c)
 
     if today in rp_dict:
-        print("YES")
         if qqid not in rp_dict[today]:
             rp_dict[today][qqid] = ((strokes+id_cnt)*year*month // day % 99) + 1
-        else:
-            print("DOUBLE YES")
     else:
         rp_dict[today] = dict()
         rp_dict[today][qqid] = ((strokes+id_cnt)*year*month // day % 99) + 1
