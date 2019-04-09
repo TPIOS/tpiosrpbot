@@ -23,6 +23,8 @@ Here are some websites for you to build a good environment and check basic comma
 
 (Although I don't think they still update them, they look cool!)
 
+https://github.com/richardchien/coolq-http-api
+
 https://github.com/pandolia/qqbot
 
 https://none.rclab.tk/guide/
