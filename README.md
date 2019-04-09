@@ -3,12 +3,12 @@ Here is a bot for QQ chatbot programmed by 望村小居士(TPIOS), which is base
 
 ### Requirements
 
-I'm programming in **Python 3.7** with **none-bot==1.3.0**
+I'm programming in **Python 3.7** with **nonebot==1.3.0**
 
 You may use
 
 ```
-pip3 install none-bot==1.3.0
+pip3 install nonebot==1.3.0
 ```
 
 to install the none-bot
