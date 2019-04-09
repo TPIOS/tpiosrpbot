@@ -1,19 +1,12 @@
 from nonebot import on_command, CommandSession
 import datetime
+from awesome.plugins.utils import getUsername
+from awesome.plugins.bihua import get_stroke
+
 @on_command("ra", only_to_me = False)
 async def ra(session: CommandSession):
     ra_report = await calculate(session.ctx, session.current_arg)
     await session.send(ra_report)
-
-def getUsername(data):
-    if 'group_id' in data:
-        if 'card' in data['sender'] and data['sender']['card'] != '':
-            nickname = data['sender']['card']
-        else:
-            nickname = data['sender']['nickname']
-    else:
-        nickname = data['sender']['nickname']
-    return nickname
 
 def eventprop(dataString):
     prop = ""
