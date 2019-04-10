@@ -1,7 +1,6 @@
 from nonebot import on_command, CommandSession
 import datetime
-from awesome.plugins.bihua import get_stroke
-from awesome.plugins.utils import getUsername
+from awesome.plugins.utils import getUsername, get_stroke
 rp_dict = dict()
 
 @on_command('jrrp', only_to_me = False)
