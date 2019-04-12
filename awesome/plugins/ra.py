@@ -1,7 +1,7 @@
 from nonebot import on_command, CommandSession
 import datetime
 from awesome.plugins.utils import getUsername
-from awesome.plugins.bihua import get_stroke
+from awesome.plugins.utils import get_stroke
 
 @on_command("ra", only_to_me = False)
 async def ra(session: CommandSession):
