@@ -1,7 +1,6 @@
 from nonebot import on_command, CommandSession
-import datetime
-from awesome.plugins.utils import getUsername
-from awesome.plugins.utils import get_stroke
+import random
+from awesome.plugins.utils import getUsername, getProbability
 
 @on_command("ra", only_to_me = False)
 async def ra(session: CommandSession):
@@ -39,13 +38,10 @@ def getRes(res, prop):
 
 async def calculate(data, dataString):
     nickname = getUsername(data)
+    userid = str(data["sender"]["user_id"])
     event, prop = eventprop(dataString)
     if checkavail(event, prop): return nickname + "指令输入错误，请检查"
     prop = eval(prop)
-    strokes = get_stroke(event)
-    date = datetime.datetime.now()
-    year, month, day = date.year, date.month, date.day
-    hour, minute, second = date.hour, date.minute, date.second
-    res = ((((strokes % len(event)) * second + month) * year // month) % 99) + 1
+    res = getProbability(userid, nickname, random.randint(1, 100), event)
     chineseRes = " " + getRes(res, prop)
     return nickname + "进行" + event + "检定：D100=" + str(res) + "/" + str(prop) + chineseRes

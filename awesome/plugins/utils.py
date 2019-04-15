@@ -11,7 +11,7 @@ def getUsername(data):
         nickname = data['sender']['nickname']
     return nickname
 
-def get_stroke(s):
+def getStroke(s):
     strokes_path = "strokes.txt"
     strokes = []
     file = open(strokes_path, "r")
@@ -27,3 +27,10 @@ def get_stroke(s):
             total_strokes += strokes[code-80338]
     
     return total_strokes
+
+def getProbability(userid, username, rand, event = None):
+    cnt = sum(map(int, list(userid)))
+    if event == None:
+        return (cnt*getStroke(username) + rand) % 99 + 1
+    else:
+        return (cnt*getStroke(event)*getStroke(username) + rand) % 99 + 1
